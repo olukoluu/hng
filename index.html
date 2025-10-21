@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="page-nav" aria-label="page navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <article class="profile-card" data-testid="test-profile-card">
+      <figure class="avatar">
+        <img
+          src="https://ca.slack-edge.com/T09AMR8A9C3-U09LJMF7ZC3-9981b41c5b6f-512"
+          alt="Profile avatar"
+          data-testid="test-user-avatar"
+        />
+      </figure>
+      <section class="user_info">
+        <h2 data-testid="test-user-name">Olukolu Usman</h2>
+        <p class="time">
+          Current time (ms):
+          <span data-testid="test-user-time" id="time"></span>
+        </p>
+        <p data-testid="test-user-bio">
+          Passionate frontend developer who loves building clean, user-focused
+          interfaces.
+        </p>
+        <nav class="social-nav" aria-label="Social Links" data-testid="test-user-social-links">
+          <h3 class="social-title">Socials</h3>
+            <a
+            href="https://x.com/dev_sekani"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="test-user-social-twitter"
+            >Twitter</a
+          >
+          <a
+            href="https://github.com/olukoluu"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="test-user-social-github"
+            >GitHub</a
+          >
+        </nav>
+        <section class="section-group">
+          <section aria-labelledby="hobbies-title">
+            <h3 id="hobbies-title">Hobbies</h3>
+            <ul data-testid="test-user-hobbies">
+              <li>Playing football</li>
+              <li>Reading about tech</li>
+              <li>Exploring new tools</li>
+            </ul>
+          </section>
+
+          <section aria-labelledby="dislikes-title">
+            <h3 id="dislikes-title">Dislikes</h3>
+            <ul data-testid="test-user-dislikes">
+              <li>Procrastination</li>
+              <li>Unstructured projects</li>
+            </ul>
+          </section>
+        </section>
+      </section>
+    </article>
+
+    <script>
+      const timeElement = document.getElementById("time");
+      timeElement.textContent = Date.now();
+
+      setInterval(() => {
+        timeElement.textContent = Date.now();
+      }, 1000);
+    </script>
+  </body>
+</html>
